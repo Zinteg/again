@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Again</title>
+  <!-- Подключение Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="shortcut icon" href="img/favicon.svg" type="image/x-icon">
+  <style>
+    textarea {
+        resize: none;
+      }
+      .form-control:focus {
+        background-color: #1a1e22
+      }
+      .container {
+        width: 100%;
+        padding-right: 5rem;
+        padding-left: 5rem;
+        padding-top: 2rem;
+        color: white;
+      }
+      body {
+        background-color: #111518;
+    }
+    .form-control {
+      background-color: #1a1e22;
+      border: none;
+      color: #767d85;
+      border-radius: .8rem;
+    }
+    .form-control[readonly] {
+      background-color: #1a1e22;
+      border: none;
+    }
+    label {
+      color: #7a838d;
+    }
+    .all {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 3rem;
+    }
+    .title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    span#copy-message {
+      margin-left: 1rem;
+    }
+    textarea#latin-text.form-control {
+      border: none 0;
+    }
+  </style>
+</head>
+<body>
+<div class="all">
+  <div class="container">
+    <center>
+        <div class="title" style="user-select: none; width: 200px; height: 100px; margin-bottom: 2rem;">
+            <p>Again - сервис по переводу русского текста с кириллицы, на латиницу</p>
+        </div>
+    </center>
+    <form id="transliterate-form" action="/" method="POST">
+      <div class="form-group">
+        <label for="russian-text">Введите текст на русском языке:</label>
+        <textarea class="form-control" id="russian-text" name="russian-text" rows="4" cols="50"></textarea>
+      </div>
+      <div class="form-group">
+        <!-- <input class="btn btn-primary" type="button" value="Преобразовать в латиницу" onclick="convertToLatin()"> -->
+      </div>
+      <div class="form-group">
+        <label for="latin-text">Текст на латинице:</label>
+        <textarea class="form-control" id="latin-text" name="latin-text" rows="4" cols="50" readonly></textarea>
+      </div>
+      <button style="border: none; background-color: #007bff; border-radius: .8rem;" type="button" class="btn btn-success" id="copy-button">Скопировать</button>
+      <span id="copy-message"></span>
+    </form>
+  </div>
+</div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="lat.js"></script>
+  <script src="copy.js"></script>
+</body>
+</html>
